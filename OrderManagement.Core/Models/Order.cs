@@ -1,0 +1,25 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace OrderManagement.Core.Models
+{
+    public class Order
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [MinLength(3)]
+        public string CustomerName { get; set; }
+
+        [Required]
+        public DateTime OrderDate { get; set; }
+
+        [Required]
+        [Range(0.01, double.MaxValue)]
+        public decimal TotalAmount { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public bool IsDeleted { get; set; }
+    }
+}

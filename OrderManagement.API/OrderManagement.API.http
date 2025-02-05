@@ -1,0 +1,36 @@
+@baseUrl = http://localhost:5283/api
+
+### Get all orders
+GET {{baseUrl}}/orders
+Accept: application/json
+
+### Get order by id
+GET {{baseUrl}}/orders/1
+Accept: application/json
+
+### Create new order
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+    "customerName": "Test Customer",
+    "orderDate": "2024-02-05",
+    "totalAmount": 100.00
+}
+
+### Update order
+PUT {{baseUrl}}/orders/1
+Content-Type: application/json
+
+{
+    "customerName": "Updated Customer",
+    "orderDate": "2024-02-05",
+    "totalAmount": 150.00
+}
+
+### Delete order
+DELETE {{baseUrl}}/orders/1
+
+### Get order statistics
+GET {{baseUrl}}/orders/statistics
+Accept: application/json
